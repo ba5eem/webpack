@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch"
+    "start": "webpack-dev-server -d --hot --config webpack.config.js --watch"
   },
   "keywords": [],
   "author": "Baseem <baseem@gmail.com> (https://github.com/ba5eem)",
@@ -15,6 +15,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",

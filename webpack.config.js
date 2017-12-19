@@ -1,8 +1,11 @@
 const webpack = require('webpack');
+const path = require('path');
+const ExtractTextWebPackPlugin = require('extract-text-webpack-plugin');
 
 let config = {
-  entry: './index.js',
+  entry: './src/index.js',
   output: {
+    path: path.resolve(__dirname, './public'),
     filename: 'output.js'
   },
   module: {
@@ -14,10 +17,23 @@ let config = {
       },
       {
         test: /\.scss$/,
-        loader: ['style-loader', 'css-loader', 'sass-loader']
+        use: ExtractTextWebPackPlugin.extract({
+          use: ['css-loader', 'sass-loader'],
+          fallback: 'style-loader'
+        })
       }
-    ]
-  }
+    ]//end rules
+  },
+  plugins: [
+    new ExtractTextWebPackPlugin('styles.css')
+  ],
+  devServer: {
+    contentBase: path.resolve(__dirname, './public'),
+    historyApiFallback: true,
+    inline: true,
+    open:true
+  },
+  devtool: 'eval-source-map'
 }
 
 module.exports = config;
