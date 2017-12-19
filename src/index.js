@@ -2,7 +2,7 @@ require('./styles.scss');
 
 class Car {
   manufacturer(car) {
-    document.write(`I have a ${car}`)
+    document.write(`I have a big ${car}`)
   }
 }
 
