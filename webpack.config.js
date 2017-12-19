@@ -11,6 +11,10 @@ let config = {
         test: /\.js$/, //files ending with .js
         exclude: /node_modules/, //exclude the node modules dir
         loader: "babel-loader" // use this (babel-core) loader
+      },
+      {
+        test: /\.scss$/,
+        loader: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   }
