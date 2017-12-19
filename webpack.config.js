@@ -4,6 +4,7 @@ const ExtractTextWebPackPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 const ImageLoader = require('image-webpack-loader');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 let config = {
   entry: './src/index.js',
@@ -57,7 +58,8 @@ let config = {
     ]//end rules
   },
   plugins: [
-    new ExtractTextWebPackPlugin('styles.css')
+    new ExtractTextWebPackPlugin('styles.css'),
+    new DashboardPlugin()
   ],
   devServer: {
     contentBase: path.resolve(__dirname, './public'),
