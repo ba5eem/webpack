@@ -1,1 +1,11 @@
-body{background-color:salmon}
+@import url(https://fonts.googleapis.com/css?family=Merriweather);body {
+  height: 100vh;
+  background-color: #878cdf;
+  color: #99fbc6;
+  font-size: 5rem;
+  font-weight: 900;
+  font-family: "Merriweather", sans-serif; }
+
+.image-wrapper__image {
+  max-height: 300px;
+  max-width: 400px; }
